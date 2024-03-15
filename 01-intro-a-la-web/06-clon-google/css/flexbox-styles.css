@@ -1,0 +1,39 @@
+* {
+  /* el tamaño de las cajas es hasta el borde */
+  box-sizing: border-box;
+  border: 1px rgb(235, 18, 141) solid;
+}
+
+body {
+  padding: 0;
+  margin: 0 0 0 0; /* top, right, bottom, left*/
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: none;
+  /* alinea los items de acuerdo a la direcciñón principal */
+  justify-content: space-between;
+}
+
+.header-container {
+  border-color: orange;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-container div {
+  border-color: purple;
+  padding: 5px;
+}
+
+.main-container {
+  flex-grow: 20;
+}
+
+.footer-container {
+  flex-grow: 2;
+}
