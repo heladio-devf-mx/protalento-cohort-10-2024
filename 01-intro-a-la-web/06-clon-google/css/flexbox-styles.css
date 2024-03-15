@@ -1,7 +1,7 @@
 * {
   /* el tamaño de las cajas es hasta el borde */
   box-sizing: border-box;
-  border: 1px rgb(235, 18, 141) solid;
+  /* border: 1px rgb(235, 18, 141) solid; */
 }
 
 body {
@@ -17,12 +17,14 @@ body {
   border: none;
   /* alinea los items de acuerdo a la direcciñón principal */
   justify-content: space-between;
+  border: 15px rgb(235, 18, 141) solid;
 }
 
 .header-container {
   border-color: orange;
   display: flex;
   justify-content: flex-end;
+  border: 5px rgb(40, 209, 32) solid;
 }
 
 .header-container div {
@@ -32,8 +34,10 @@ body {
 
 .main-container {
   flex-grow: 20;
+  border: 5px rgb(235, 138, 34) solid;
 }
 
 .footer-container {
   flex-grow: 2;
+  border: 5px rgb(13, 114, 214) solid;
 }
