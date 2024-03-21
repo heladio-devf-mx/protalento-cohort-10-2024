@@ -42,6 +42,9 @@ console.log(diaLunes,nombreMujer);
 // Bloques de código 
 {  // Este bloque tiene un escope/alcance menor al globlal
   let fruta = "plátano";
+  var color = "red";  // variada creada dentro del bloque
+  // var nombre = "Luis";
+
   console.log("Algunos nombres no tan comunes en Colombia:");
   nombreMujer = "Linhet";
   nombreHombre = "Heladio";
@@ -55,4 +58,5 @@ console.log(diaLunes,nombreMujer);
   console.log(fruta); // let
 }
 
-console.log(mascota);
+// se imprime color, que fue creada en un bloque
+console.log(color, nombre); // nombre sigue como ubdefined
