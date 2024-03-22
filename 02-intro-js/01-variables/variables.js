@@ -43,7 +43,9 @@ console.log(diaLunes,nombreMujer);
 {  // Este bloque tiene un escope/alcance menor al globlal
   let fruta = "plátano";
   var color = "red";  // variada creada dentro del bloque
-  // var nombre = "Luis";
+  var nombresHombre = "Luis, Pepe";
+  const nombresMujer = "Ana, Juana";
+  
 
   console.log("Algunos nombres no tan comunes en Colombia:");
   nombreMujer = "Linhet";
@@ -56,7 +58,16 @@ console.log(diaLunes,nombreMujer);
 
   // let fruta = "plátano";
   console.log(fruta); // let
+  pelicula = "Hannibal";
 }
 
+var nombreHombre = "Pedro";
+/*
+let mascota = "pato"; // error
+const mascota = "pato"; // error
+*/
+
 // se imprime color, que fue creada en un bloque
-console.log(color, nombre); // nombre sigue como ubdefined
+console.log(color, nombre); // nombre sigue como undefined
+console.log(nombresHombre); // se creó con var
+console.log(nombresMujer); // es de otro scope/bloque

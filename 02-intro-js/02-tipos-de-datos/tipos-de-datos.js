@@ -48,6 +48,6 @@ const persona = {
   age: 28
 };
 
-console.log(persona, typeof persona)
+console.log(persona, typeof persona);
 
 
