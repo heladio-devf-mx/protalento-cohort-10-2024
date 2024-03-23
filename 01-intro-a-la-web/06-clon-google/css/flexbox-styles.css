@@ -1,3 +1,7 @@
+:root {
+  --bg-color: #202124;
+}
+
 * {
   /* el tamaño de las cajas es hasta el borde */
   box-sizing: border-box;
@@ -6,8 +10,19 @@
 
 body {
   padding: 0;
-  margin: 0 0 0 0; /* top, right, bottom, left*/
+  margin: 0 0 0 0;
+  /* top, right, bottom, left*/
   height: 100vh;
+  font-family: arial, sans-serif;
+}
+
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .container {
@@ -35,6 +50,47 @@ body {
 .main-container {
   flex-grow: 20;
   border: 5px rgb(235, 138, 34) solid;
+  /* Para los hijos del main */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(32, 31, 31); */
+  background-color: var(--bg-color);
+  color: white;
+}
+
+.google-logo {
+  /* background-color: rgb(32, 31, 31); */
+  padding: 30px;
+}
+
+.search-buttons {
+  padding: 20px;
+}
+
+.search-buttons button {
+  background-color: #303134;
+  border: 1px solid #303134;
+  border-radius: 4px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  color: white;
+  padding: 8px;
+  height: 36px;
+  box-sizing: border-box;
+  min-width: 54px;
+}
+
+.search-buttons button:hover {
+  box-shadow: 0 1px 3px rgba(23, 23, 23, 0.24);
+  background-color: #303134;
+  border: 1px solid #5f6368;
+  color: #e8eaed;
+}
+
+.language-text {
+  font-size: 13px;
 }
 
 .footer-container {
