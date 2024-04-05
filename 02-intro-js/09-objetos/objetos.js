@@ -1,4 +1,4 @@
-// console.log("** Objects **");
+console.log("** Objects **");
 
 "Esta es una cadena"; // cadena literal
 // Objetos literales
