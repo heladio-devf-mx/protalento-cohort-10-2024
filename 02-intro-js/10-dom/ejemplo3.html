@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejemplo 3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Ejemplo 3</h1>
+    <p>Elemento dentro de parrafo</p>
+    <h2 id="elh2">Elemento h2</h2>
+    <ul>
+      <li class="elli">Elemento li 1</li>
+      <li class="elli">Elemento li 2</li>
+      <li class="elli">Elemento li 3</li>
+    </ul>
+    <button onclick="cambiarTextos()">Cambia Textos</button>
+    <script>
+      const h1 = document.getElementsByTagName('h1') // [element, element]
+      console.log(h1[0].innerHTML)
+
+      const h2 = document.getElementById('elh2') // element
+      console.log(h2.innerHTML)
+
+      const li = document.getElementsByClassName('elli') // [element, element, element]
+      console.log(li[1].innerHTML)
+
+      const h2_query = document.querySelector('#elh2') // element
+      console.log(h2_query.innerHTML)
+
+      const li_query = document.querySelectorAll('.elli') // [element, element, element]
+      console.log(li_query[1].innerHTML)
+
+      const h2_outer = document.querySelectorAll('#elh2')[0] // element
+      console.log(h2_outer.outerHTML)
+
+      function cambiarTextos() {
+        h2.outerHTML = '<h3>Elemento h3</h3>'
+        h1[0].innerHTML = 'Otra cosa'
+
+      }
+    </script>
+  </body>
+</html>
