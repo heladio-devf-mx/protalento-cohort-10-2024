@@ -1,14 +1,20 @@
 let lista_super = [];
 
 function agregar() {
-  let nombre = document.getElementById("nombre").value
-  let cantidad = document.getElementById("cantidad").value
-  let precio = document.getElementById("precio").value
+  let nombre = document.getElementById("nombre")
+  let cantidad = document.getElementById("cantidad")
+  let precio = document.getElementById("precio")
 
-  console.log(`Nombre: ${nombre}, Cantidad: ${cantidad}, Precio: ${precio}`)
+  nombre.value 
 
-  let total = cantidad * precio
+  console.log(`Nombre: ${nombre.value}, Cantidad: ${cantidad.value}, Precio: ${precio.value}`);
+
+  let total = cantidad.value * precio.value
   lista_super.push(total); // solo cantidades totales
+
+  nombre.value = "";
+  cantidad.value = "";
+  precio.value = "";
 }
 
 function calcular() {
@@ -16,5 +22,12 @@ function calcular() {
   for (let i = 0; i < lista_super.length; i++) {
     total += lista_super[i]
   }
-  alert(`Total: ${total}`)
+
+  document.getElementById("total").innerHTML = "EL TOTAL ES: $" + total
+
+  /*document.getElementById("total").innerHTML = `
+  <div class="">
+    <p>EL TOTAL ES: </p>
+    <p>$${total}</p>
+  </div>`*/	
 }
