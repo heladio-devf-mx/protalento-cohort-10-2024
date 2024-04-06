@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <form onSubmit="return false;">
+      <h1>Cajero de super</h1>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" />
+      <br />
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad">
+      <br />
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio">
+      <br />
+      <button onclick="agregar()">Agregar</button>
+      <button onclick="calcular()">Enviar</button>
+    </form>
+    <script src="js/cajero-de-super.js"></script>
+  </body>
+</html>
