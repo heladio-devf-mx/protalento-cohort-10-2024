@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // buscar mi elemento del mensaje
   const domLoadedElement = document.querySelector("#dom-loaded");
   // actualizo el elemento
-  domLoadedElement.textContent = "El DOM está listo";
+  // domLoadedElement.textContent = "El DOM está listo";
 
   // La lógica de nuestra página.
   const formElement = document.querySelector("form");
