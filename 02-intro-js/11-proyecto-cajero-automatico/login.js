@@ -5,9 +5,10 @@ console.log("Cajero de MEXICOL!");
  * Tabla
  */
 const usuarios = [
-    { id: 1, userName: "mali", password: 200 },
-    { id: 2, userName: "gera", password: 290 },
-    { id: 3, userName: "maui", password: 67 },
+    { id: 1, userName: "mali", password: "mali123" },
+    { id: 2, userName: "gera", password: "gera456" },
+    { id: 3, userName: "maui", password: "maui789" },
+    { id: 3, userName: "silvia", password: "Silv14" },
 ];
 
 // Maps y Sets (Estructuras de datos)
