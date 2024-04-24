@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
         // 3. Validar contraseña.
 
-        // 4. Si no son correctos usuario o contraseña, mostrar error.        // 5. Si son válidos sus datos, permitirle el acceso a su cuenta. 
+        // 4. Si no son correctos usuario o contraseña, mostrar error.        
+        
+        // 5. Si son válidos sus datos, permitirle el acceso a su cuenta. 
     });
 });
