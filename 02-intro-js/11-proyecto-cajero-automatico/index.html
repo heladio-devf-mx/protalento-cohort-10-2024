@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero ATM</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Buscar el atributo defer -->
+    <script defer src="login.js"></script>
+</head>
+<body>
+    <header>
+        <img src="images/mexicol-logo.avif" alt="MEXICOL" class="mexicol-logo"/>
+        <h1>Banco MEXICOL</h1>
+    </header>
+    <main>
+        <section id="page-title">
+            <h2>Login / Inicio de Sesión</h2>
+        </section>
+        <section id="form-container">
+            <form id="login-form">
+                <div class="field-container">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="E.j. helladyo" required/>
+                </div>
+                <div class="field-container">
+                    <label for="password">Contraseña</label>
+                    <input type="text" id="password" placeholder="Contraseña"/>
+                </div>
+                <div>
+                    <button type="submit" id="submit-button">Iniciar Sesión</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
