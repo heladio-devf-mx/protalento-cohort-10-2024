@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero ATM - Detalle de cuenta</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Buscar el atributo defer -->
+  <script defer src="js/cajero.js"></script>
+</head>
+
+<body>
+  <header>
+    <img src="images/mexicol-logo.avif" alt="MEXICOL" class="mexicol-logo" />
+    <h1>Banco MEXICOL</h1>
+  </header>
+  <main>
+    <section id="page-title">
+      <h2>Bienvenido a tu cuenta</h2>
+      <p id="nombre-usuario">Usuario nombre</p>
+    </section>
+    <section>
+      <h2>Operaciones</h2>
+      <div id="botones-atm">
+        <button id="boton-saldo">Consulta tu Saldo</button>
+        <button id="boton-depositar">Depositar Saldo</button>
+        <button id="boton-retirar" onclick="retirarSaldo()">Retirar Saldo</button>
+      </div>
+    </section>
+    <div id="resultado_container"></div>
+  </main>
+</body>
+
+</html>

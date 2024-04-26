@@ -1,14 +1,14 @@
-console.log("Cajero de MEXICOL!");
+console.log("Inicio de sesión de MEXICOL!");
 
 /**
  * BD de usuarios
  * Tabla
  */
 const usuarios = [
-  { id: 1, nombre: "Mali", userName: "mali", password: "mali123" },
-  { id: 2, nombre: "Gerardo", userName: "gera", password: "gera456" },
-  { id: 3, nombre: "Maui", userName: "maui", password: "maui789" },
-  { id: 3, nombre: "Silvia", userName: "silvia", password: "Silv14" },
+  { id: 1, nombre: "Mali", userName: "mali", password: "mali123", saldo: 200 },
+  { id: 2, nombre: "Gerardo", userName: "gera", password: "gera456", saldo: 20 },
+  { id: 3, nombre: "Maui", userName: "maui", password: "maui789", saldo: 50 },
+  { id: 3, nombre: "Silvia", userName: "silvia", password: "Silv14", saldo: 100 },
 ];
 
 // const getUsuarios = () => {
@@ -62,11 +62,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
             usuario.password === passwordinput.trim()
         )
       ) {
-        console.log("Inicio de sesión exitoso\nBienvenido " + reguser.nombre);
-
-        resultado_container.innerHTML = `<p>Bienvenido ${reguser.nombre}</p>`;
+        console.log("Inicio de sesión exitoso\nBienvenid@ " + reguser.nombre);
+        resultado_container.innerHTML = `<p>Bienvenid@ ${reguser.nombre}</p>`;
         // limpiar el formulario
-        
+        loginForm.reset();
+        // Guardar información de cuenta en el local Storage
+        // Buscar al usuario con un ciclo (como lo hihcieron las compañeras)
+        let cuentaUsuario = null; // vacío al principio
+        for (let index = 0; index < usuarios.length; index++) {
+          if (username.toLowerCase().trim() === usuarios[index].userName) {
+            cuentaUsuario = usuarios[index];
+            break;  // detener las iteracinoes del for
+          }
+        }
+        // Guardar en local Storage
+        cuentaUsuario = JSON.stringify(cuentaUsuario);
+        localStorage.setItem("cuentaUsuario", cuentaUsuario);
+        // redireccionar al detalle de su cuenta
+        setTimeout(
+          () => window.location = 'detalleCuenta.html',
+          1000
+        );
       } else {
         console.log("Contraseña incorrecta");
         resultado_container.innerHTML = `<p>Contraseña incorrecta</p>`;

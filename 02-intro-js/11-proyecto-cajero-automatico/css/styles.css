@@ -1,0 +1,39 @@
+body {
+  font-family: Palatino;
+  text-align: center;
+  background-color: navy;
+  color: rgb(234, 216, 17);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  padding-left: 30px;
+  
+}
+
+button {
+  background:powderblue;
+  border:3px powderblue solid;
+  color:blue;
+  font:18px sans-serif;
+  padding:8px;
+  margin:10px;
+  border-radius: 4px;;
+}
+
+button:hover {
+  border-color: rgb(234, 216, 17);
+}
+
+.mexicol-logo {
+  height: 80px;
+}
+
+#resultado_container {
+  margin-top: 30px;
+  font-size: 30px;
+}
