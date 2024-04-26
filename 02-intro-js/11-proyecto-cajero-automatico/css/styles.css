@@ -22,11 +22,12 @@ button {
   font:18px sans-serif;
   padding:8px;
   margin:10px;
-  border-radius: 4px;;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:hover {
-  border-color: rgb(234, 216, 17);
+  background-color: rgb(234, 216, 17);
 }
 
 .mexicol-logo {
