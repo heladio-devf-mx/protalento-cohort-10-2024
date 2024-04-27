@@ -7,5 +7,16 @@ async function findPokemonByName(pokemon_name) {
   return pokemon;
 }
 
+async function first150Pokemons() {
+  let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150");
+  let pokemon_list = await response.json();
+  let pokemons = [];
 
-export { findPokemonByName }
+  for (let i = 0; i < pokemon_list.results.length; i++) {
+    let pokemon = await fetch(pokemon_list.results[i].url);
+    pokemons[i] = await pokemon.json();
+  }
+  return pokemons;
+}
+
+export { findPokemonByName, first150Pokemons };
