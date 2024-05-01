@@ -13,6 +13,11 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
   .then((jsonData) => {
     const { id, title } = jsonData;
     console.log(`El post #${id} tiene se titula "${title}".`);
-    console.log(jsonData);
-    // return {...jsonData};
-  });
+    console.log("Segundo then", jsonData);
+    return jsonData;
+  })
+  .then(json => {
+    console.log(json);
+    return {...json};
+  })
+  .finally(data => console.log(data));
