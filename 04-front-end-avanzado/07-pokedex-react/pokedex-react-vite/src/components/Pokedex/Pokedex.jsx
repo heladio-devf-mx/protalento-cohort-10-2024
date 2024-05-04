@@ -2,57 +2,11 @@
 import SearchBar from "../SearchBar/SearchBar";
 import PokemonCard from "../PokemonCard/PokemonCard";
 import { useState, useEffect } from "react";
-import { first150Pokemons } from "../../services/pokedexServices";
+import { findPokemonByName, first150Pokemons } from "../../services/pokedexServices";
 
 function Pokedex() {
-
-const pokemones_mock = [
-    {
-      name: "bulbasaur",
-      weight: 69,
-      height: 7,
-      abilities: [
-        {
-          ability: {
-            name: "overgrow",
-            url: "https://pokeapi.co/api/v2/ability/65/",
-          },
-        },
-      ],
-      sprites: {
-        other: {
-          "official-artwork": {
-            front_default:
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
-          },
-        },
-      }
-    },
-    {
-      name: "charmander",
-      weight: 85,
-      height: 6,
-      abilities: [
-        {
-          ability: {
-            name: "blaze",
-            url: "https://pokeapi.co/api/v2/ability/66/",
-          },
-        },
-      ],
-      sprites: {
-        other: {
-          "official-artwork": {
-            front_default:
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
-          },
-        },
-      },
-    }
-  ]
-
   // Mostrar Resultado
-  const [searchResult, setSearchResult] = useState({});
+  const [searchResult, setSearchResult] = useState(null); 
   const [pokemones, setPokemones] = useState([]);
 
   async function obtenerPokemones() {
@@ -71,9 +25,9 @@ const pokemones_mock = [
       <section>
         <SearchBar actualizarSearchResult={setSearchResult} />
         {/* Uso de props */}
-        {
+        { searchResult && <PokemonCard pokemon={searchResult} /> || 
           pokemones.map((pokemon,i) => 
-          <PokemonCard pokemon={pokemon} key={i} />
+            <PokemonCard pokemon={pokemon} key={i} />
           )
         }
       </section>
