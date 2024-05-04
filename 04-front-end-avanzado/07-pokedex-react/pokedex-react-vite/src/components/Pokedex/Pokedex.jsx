@@ -1,7 +1,8 @@
 // Componente principal del Pokedex
 import SearchBar from "../SearchBar/SearchBar";
 import PokemonCard from "../PokemonCard/PokemonCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { first150Pokemons } from "../../services/pokedexServices";
 
 function Pokedex() {
 
@@ -52,6 +53,17 @@ const pokemones_mock = [
 
   // Mostrar Resultado
   const [searchResult, setSearchResult] = useState({});
+  const [pokemones, setPokemones] = useState([]);
+
+  async function obtenerPokemones() {
+   let pokemones_result = await first150Pokemons()
+    setPokemones(pokemones_result);
+  }
+
+  useEffect(() => {
+    obtenerPokemones()
+  }, [])
+
 
   return (
     <>
@@ -60,7 +72,7 @@ const pokemones_mock = [
         <SearchBar actualizarSearchResult={setSearchResult} />
         {/* Uso de props */}
         {
-          pokemones_mock.map((pokemon,i) => 
+          pokemones.map((pokemon,i) => 
           <PokemonCard pokemon={pokemon} key={i} />
           )
         }
