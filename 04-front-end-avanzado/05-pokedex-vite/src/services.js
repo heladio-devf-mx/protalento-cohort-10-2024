@@ -35,6 +35,8 @@ function getFirst50Pokemons() {
           console.log(pokemonDetalle);
         pokemonList[i] = pokemonDetalle;
       }
+
+      return pokemonList;
     })
     .catch(error => console.log("Error: " + error));
 }
