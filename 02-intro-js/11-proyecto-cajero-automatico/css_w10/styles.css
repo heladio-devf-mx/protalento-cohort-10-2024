@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    min-width: 120px;
+    text-align: left;
+    cursor: auto;
+}
+
+button {
+    cursor: pointer;
+    min-width: 120px;
+    padding: 5px;
+}
+
+.mexicol-logo {
+    height: 80px;
+}
+
+#page-title {
+    margin: 50px auto;
+}
+
+.field-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
