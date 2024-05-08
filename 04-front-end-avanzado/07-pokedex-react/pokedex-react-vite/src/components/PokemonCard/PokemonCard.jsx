@@ -4,7 +4,7 @@ export default function PokemonCard(props) {
   // props = {
   //  pokemon: pokemonFake
   // }
-  console.log(props);
+  // console.log(props);
   return (
     <div className="card">
       <h1>{props.pokemon.name}</h1>
@@ -14,7 +14,7 @@ export default function PokemonCard(props) {
       <span>{props.pokemon.height}</span><br></br>
       <label>Peso:</label>
       <span>{props.pokemon.weight}</span><br/>
-      <label>Habilidad principal:</label>
+      <label>Habilidad principal: </label>
       <span>{props.pokemon.abilities[0].ability.name}</span>
     </div>
   );

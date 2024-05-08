@@ -10,13 +10,14 @@ function Pokedex() {
   const [pokemones, setPokemones] = useState([]);
 
   async function obtenerPokemones() {
-   let pokemones_result = await first150Pokemons()
+   let pokemones_result = await first150Pokemons();
     setPokemones(pokemones_result);
   }
 
+  // Hook useEffect
   useEffect(() => {
-    obtenerPokemones()
-  }, [])
+    obtenerPokemones();
+  }, []); // Solo se ejecuta una sola vez al principio, cuando se crea o carga el componente
 
 
   return (
@@ -25,7 +26,8 @@ function Pokedex() {
       <section>
         <SearchBar actualizarSearchResult={setSearchResult} />
         {/* Uso de props */}
-        { searchResult && <PokemonCard pokemon={searchResult} /> || 
+        {/* Render condicional */}
+        { (searchResult && <PokemonCard pokemon={searchResult} />) || 
           pokemones.map((pokemon,i) => 
             <PokemonCard pokemon={pokemon} key={i} />
           )
