@@ -1,6 +1,6 @@
 import Fruta from './Fruta';
 
-function ListaFrutas({ listaFrutas }) {
+function ListaFrutasSimple({ listaFrutas }) {
   // Render condicional
   if (listaFrutas.length < 1) {
     return (<>No hay frutas...</>); // ahí termina la función/componente
@@ -12,9 +12,7 @@ function ListaFrutas({ listaFrutas }) {
       <ul>
         {
           listaFrutas.map((fruta, index) => {
-            // return <li key={index}>{fruta.nombre}</li>
-            // return <Fruta key={index} {...fruta} />
-            return <Fruta key={index} nombre={fruta.nombre} color={fruta.color} />
+            return <Fruta key={index} nombre={fruta} color="chocolate" />
           })
         }
       </ul>
@@ -22,4 +20,4 @@ function ListaFrutas({ listaFrutas }) {
   );
 }
 
-export default ListaFrutas;
+export default ListaFrutasSimple;
