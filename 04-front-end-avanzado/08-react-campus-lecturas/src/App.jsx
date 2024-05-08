@@ -1,7 +1,7 @@
 import MiPerfil from './components/MiPerfil';
 import ListaFrutas from './components/ListaFrutas';
 import './App.css';
-
+import AgregarFruta from './components/AgregarFruta';
 
 function App() {
   const frutas = [  // []
@@ -20,6 +20,7 @@ function App() {
       <MiPerfil />
       <ListaFrutas listaFrutas={frutas} />
       {/* Frutas */}
+      <AgregarFruta />
     </>
   )
 }
