@@ -8,7 +8,7 @@ function ListaFrutasSimple({ listaFrutas }) {
 
   return (
     <>
-      <h2>Lista de Frutas</h2>
+      <h2>Lista de Frutas Simple</h2>
       <ul>
         {
           listaFrutas.map((fruta, index) => {

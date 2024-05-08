@@ -21,7 +21,7 @@ function AgregarFruta() {
 
   return (
     <>
-      <h2>Nueva canasta de frutas nueva:</h2>
+      <h2>Nueva canasta de frutas:</h2>
       <label htmlFor="nombre-fruta-input">Nueva fruta</label>
       <input
         id="nombre-fruta-input"
