@@ -4,9 +4,10 @@ export default function PokemonCard(props) {
   // props = {
   //  pokemon: pokemonFake
   // }
-  // console.log(props);
+  console.log(props);
   return (
     <div className="card">
+
       <h1>{props.pokemon.name}</h1>
       <img style={{width: 200}}  src={props.pokemon.sprites.other["official-artwork"].front_default} />
       <br />
