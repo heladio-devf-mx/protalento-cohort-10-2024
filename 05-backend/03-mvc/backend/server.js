@@ -1,5 +1,6 @@
 // 1. Llamar la biblioteca express
 const express = require("express");
+const cors = require("cors");
 const db = require("./config/database");
 const autorRoutes = require("./routes/autorRoutes");
 const libroRoutes = require("./routes/libroRoutes");
@@ -7,6 +8,7 @@ const libroRoutes = require("./routes/libroRoutes");
 // 2. Crear una instancia de express
 const app = express();
 
+app.use(cors());
 app.use(express.json()); // json me permite recibir información en formato json
 
 // Conectar Base de datos
