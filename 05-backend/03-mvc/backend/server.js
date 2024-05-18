@@ -2,6 +2,7 @@
 const express = require("express");
 const db = require("./config/database");
 const autorRoutes = require("./routes/autorRoutes");
+const libroRoutes = require("./routes/libroRoutes");
 
 // 2. Crear una instancia de express
 const app = express();
@@ -26,6 +27,7 @@ app.get("/", (req, res) => {
 
 // Rutas
 app.use('/api/v1', autorRoutes)
+app.use("/api/v1", libroRoutes);
 
 
 // 4. Lanzar el servidor
