@@ -1,6 +1,7 @@
 // 1. Llamar la biblioteca express
 const express = require("express");
 const db = require("./config/database");
+const autorRoutes = require("./routes/autorRoutes");
 
 // 2. Crear una instancia de express
 const app = express();
@@ -22,6 +23,9 @@ app.get("/", (req, res) => {
 
   res.send(`Hola ${req.query.name}`);
 });
+
+// Rutas
+app.use('/api/v1', autorRoutes)
 
 
 // 4. Lanzar el servidor
