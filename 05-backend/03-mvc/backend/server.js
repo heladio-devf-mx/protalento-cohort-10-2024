@@ -7,8 +7,8 @@ const libroRoutes = require("./routes/libroRoutes");
 
 // 2. Crear una instancia de express
 const app = express();
-
-app.use(cors());
+// 2.1 configuración de mi aplicación
+app.use(cors());  // poder dar acceso a otras aplicaciones (react)
 app.use(express.json()); // json me permite recibir información en formato json
 
 // Conectar Base de datos

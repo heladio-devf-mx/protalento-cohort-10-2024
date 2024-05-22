@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const libroSchema = new mongoose.Schema({
   titulo: {
-    type: String,
-    required: true,
+    type: String, // atributo / campo
+    required: true, // constraint
   },
   autor: {
     type: mongoose.Schema.ObjectId,

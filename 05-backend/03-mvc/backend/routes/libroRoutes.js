@@ -5,4 +5,4 @@ const libroRoutes = express.Router();
 
 libroRoutes.get('/libros', libroController.getAllLibros);
 
-module.exports = libroRoutes
+module.exports = libroRoutes;

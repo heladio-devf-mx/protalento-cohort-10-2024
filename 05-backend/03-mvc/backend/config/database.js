@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 dotenv.config(); // Configurar dotenv
 
 const connect = () => {
-  mongoose.connect(process.env.DB_URL)
+  // conexión a la BD sucede en esta función...
+  mongoose.connect(process.env.DB_URL);
 
   const connection = mongoose.connection;
 
