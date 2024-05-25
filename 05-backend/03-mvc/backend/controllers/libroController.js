@@ -1,8 +1,16 @@
-const Libro = require("../models/Libros")
+const Libro = require("../models/Libros");
 
-const getAllLibros = async (req, res) => {
-  const libros = await Libro.find({})
-  res.send({ data: libros })
+// Create new book
+const createLibro = async (req, res) => {
+
 }
 
-module.exports = { getAllLibros }
+// Get all
+const getAllLibros = async (req, res) => {
+  const libros = await Libro.find({ year: 1968 });
+  res.send({ data: libros });
+}
+
+// Update libro
+
+module.exports = { getAllLibros, createLibro }

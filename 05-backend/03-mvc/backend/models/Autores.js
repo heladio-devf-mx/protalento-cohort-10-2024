@@ -9,8 +9,20 @@ const autorSchema = new mongoose.Schema({
   apellido:{
     type: String,
     required: true
+  },
+  vive: {
+    type: Boolean,
+    default: true
+  },
+  isActive: {
+    type: Boolean,
+    default: true
   }
-});
+}, { timestamps: true });
+ // timestamps: true agrega createdAt y updatedAt
+
+// cuándo se insertan los documentos
+// cuándo se modificaron la última vez
 
 // 2. Crear el modelo
 

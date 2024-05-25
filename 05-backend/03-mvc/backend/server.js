@@ -11,24 +11,26 @@ const app = express();
 app.use(cors());  // poder dar acceso a otras aplicaciones (react)
 app.use(express.json()); // json me permite recibir información en formato json
 
-// Conectar Base de datos
+// 2.2. Conectar Base de datos
 db.connect();
 
 // 3. Declarar una ruta
-app.get("/", (req, res) => {
+app.get("/", (request, response) => {
   // req -> request
   // res -> response
-
-  console.log(req);
-
+  // console.log(req);
   // Obtener dirección IP
-  console.log(req.ip);
+  console.log(request.ip);
+  
+  // http://localhost:3000/books/15000 // req.param
+  // http://localhost:3000/books/?name=Angela&saldo=300 // req.query
 
-  res.send(`Hola ${req.query.name}`);
+  // request es un objeto que contiene la información de la petición
+  response.send(`Hola ${request.query.name} tu saldo es ${request.query.saldo}`);
 });
 
 // Rutas
-app.use('/api/v1', autorRoutes)
+app.use('/api/v1', autorRoutes);
 app.use("/api/v1", libroRoutes);
 
 
