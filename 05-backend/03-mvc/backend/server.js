@@ -4,6 +4,7 @@ const cors = require("cors");
 const db = require("./config/database");
 const autorRoutes = require("./routes/autorRoutes");
 const libroRoutes = require("./routes/libroRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 // 2. Crear una instancia de express
 const app = express();
@@ -32,6 +33,7 @@ app.get("/", (request, response) => {
 // Rutas
 app.use('/api/v1', autorRoutes);
 app.use("/api/v1", libroRoutes);
+app.use("/api/v1", authRoutes);
 // 4. Lanzar el servidor
 app.listen(3000, () => {
   console.log("Servidor corriendo en el puerto 3000");
