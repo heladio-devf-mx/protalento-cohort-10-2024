@@ -2,10 +2,18 @@ const Autor = require("../models/Autores")
 
 // CREATE
 const createAutor = async (req, res) => {
-  const autorInformation = req.body;  // recuperamos información de la petición
-  const newAutor = new Autor(autorInformation); // creamos un objeto del modelo autor
-  const result = await newAutor.save(); // salvamos ese objeto en la BD
-  res.status(201).json(result); // regresar la respuesta de la petición
+  try {
+    const autorInformation = req.body;  // recuperamos información de la petición
+
+    console.log(`AUTOR INFORMATION: ${autorInformation}`);
+
+    const newAutor = new Autor(autorInformation); // creamos un objeto del modelo autor
+    const result = await newAutor.save(); // salvamos ese objeto en la BD
+    res.status(201).json(result); // regresar la respuesta de la petición
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 }
 
 // READ ALL
