@@ -1,13 +1,17 @@
-import Autores from './components/Autores'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import RoutesIndex from './routes/RoutesIndex'
+import NavBar from './components/NavBar'
 
 function App() {
 
 
   return (
     <>
-      <h1>Bienvenido a la biblioteca</h1>
-      <Autores />
+      <BrowserRouter>
+        <NavBar />
+        <RoutesIndex />
+      </BrowserRouter>
     </>
   )
 } 

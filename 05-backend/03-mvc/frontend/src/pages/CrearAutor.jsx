@@ -1,22 +1,10 @@
-import { getAllAutores, createAutor } from "../services/autores";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { createAutor } from "../services/autores";
 
-
-const Autores = () => {
-  const [autores, setAutores] = useState([])
-
+const CrearAutor = () => {
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
   const [vive, setVive] = useState(true)
-
-  const obtenerAutores = async () => {
-    try {
-      const data = await getAllAutores()
-      setAutores(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
 
   const crearAutor = async (event) => {
     event.preventDefault()
@@ -25,25 +13,14 @@ const Autores = () => {
     //let autor = { nombre: nombre, apellido: apellido, vive : vive }
     try {
       await createAutor({ nombre, apellido, vive })
-      obtenerAutores()
     } catch (error) {
       console.log(error)
     }
   }
 
-  useEffect(() => {
-    obtenerAutores() 
-  }, []);
-
-
   return (
     <div>
-      <h1>Autores</h1>
-      <ul>
-        {autores.map((autor) => (
-          <li key={autor._id}>{autor.nombre} - {autor.apellido} - {autor.vive ? "Vive" : "No vive"}</li>
-        ))} 
-      </ul>
+      <h1>Crear Autor</h1>
       <form onSubmit={crearAutor}>
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" id="nombre" 
@@ -64,4 +41,4 @@ const Autores = () => {
   )
 }
 
-export default Autores
+export default CrearAutor
