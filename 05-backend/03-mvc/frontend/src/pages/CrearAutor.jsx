@@ -13,6 +13,11 @@ const CrearAutor = () => {
     //let autor = { nombre: nombre, apellido: apellido, vive : vive }
     try {
       await createAutor({ nombre, apellido, vive });  // petición al backend
+      // Limpiar && redireccionar?/success message
+      setNombre('');
+      setApellido('');
+      setVive(true);
+      // TO DO: redirect?
     } catch (error) {
       console.log(error);
     }
@@ -24,13 +29,13 @@ const CrearAutor = () => {
       <form onSubmit={crearAutor}>
         <label htmlFor="nombre">Nombre:</label>
         <input type="text" id="nombre" 
-        name="nombre" onChange={(event) => setNombre(event.target.value)} />
+        name="nombre" onChange={(event) => setNombre(event.target.value)} value={nombre} />
         <br />
         <label htmlFor="apellido">Apellido:</label>
         <input type="text" id="apellido" 
-        name="apellido" onChange={(event) => setApellido(event.target.value)}/>
+        name="apellido" onChange={(event) => setApellido(event.target.value)} value={apellido}/>
         <br />
-        <select name="vive" id="vive" onChange={(event) => setVive(event.target.value)}>
+        <select name="vive" id="vive" onChange={(event) => setVive(event.target.value)} defaultValue={vive}>
           <option value="true">Vive</option>
           <option value="false">No vive</option>
         </select>

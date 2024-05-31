@@ -50,6 +50,7 @@ const Registro = () => {
               className="form-control"
               id="floatingInput"
               placeholder="name@example.com"
+              value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="floatingInput">Email address</label>
@@ -60,6 +61,7 @@ const Registro = () => {
               className="form-control"
               id="floatingPassword"
               placeholder="Password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
             <label htmlFor="floatingPassword">Password</label>
