@@ -12,9 +12,9 @@ const CrearAutor = () => {
     //console.log(nombre.value, apellido.value, vive.value)
     //let autor = { nombre: nombre, apellido: apellido, vive : vive }
     try {
-      await createAutor({ nombre, apellido, vive })
+      await createAutor({ nombre, apellido, vive });  // petición al backend
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 

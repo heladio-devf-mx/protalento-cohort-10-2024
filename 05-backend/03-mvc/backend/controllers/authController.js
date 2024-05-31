@@ -5,11 +5,10 @@ const dotenv = require("dotenv");
 
 dotenv.config(); // Configurar dotenv
 
-
 const register = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, role } = req.body;
   encryptPassword = await bcrypt.hash(password, 10);
-  const user = await User.create({ email, encryptPassword });
+  const user = await User.create({ email, encryptPassword, role });
   res.status(201).send({ message: "Usuario creado correctamente" });
 }
 
