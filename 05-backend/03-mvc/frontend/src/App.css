@@ -45,3 +45,10 @@ form * {
   padding: 5px;
   margin: 5px;
 }
+
+
+.main-section form {
+  margin: 0 auto;
+  min-width: 420px;
+  max-width: 660px;
+}

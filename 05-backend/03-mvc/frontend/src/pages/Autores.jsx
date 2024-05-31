@@ -15,20 +15,23 @@ const Autores = () => {
   }
 
   useEffect(() => {
-    obtenerAutores() 
+    obtenerAutores()
   }, []);
 
 
   return (
     <div>
       <h1>Autores</h1>
-      <ul>
-        {autores.map((autor) => (
-          <li key={autor._id}>{autor.nombre} - {autor.apellido} - {autor.vive ? "Vive" : "No vive"}</li>
-        ))} 
-      </ul>
+
+      {autores.map((autor) => (
+        <div className="card" key={autor._id}>
+          <div className="card-body">
+            {autor.nombre} - {autor.apellido} - {autor.vive ? "Vive" : "No vive"}
+          </div>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Autores
+export default Autores;

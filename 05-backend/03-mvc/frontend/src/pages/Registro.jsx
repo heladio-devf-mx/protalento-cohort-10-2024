@@ -41,7 +41,7 @@ const Registro = () => {
 
   return (
     <>
-      <section>
+      <section className='main-section'>
         <h1 className='section-title'>Registro de nuevo usuario</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-floating mb-3">
@@ -54,7 +54,7 @@ const Registro = () => {
             />
             <label htmlFor="floatingInput">Email address</label>
           </div>
-          <div className="form-floating">
+          <div className="form-floating mb-3">
             <input
               type="password"
               className="form-control"
@@ -64,15 +64,19 @@ const Registro = () => {
             />
             <label htmlFor="floatingPassword">Password</label>
           </div>
+          <div className="form-floating">
           <select
-            name="vive"
-            id="vive"
+            className='form-select'
+            name="roleSelect"
+            id="roleSelect"
             defaultValue={role}
             onChange={(event) => setRole(event.target.value)}
           >
             <option value="user">Usuario normal</option>
             <option value="admin">Administrador</option>
           </select>
+          <label htmlFor="roleSelect">Selecciona Rol</label>
+          </div>
           {/* Errores */}
           <div>{error}</div>
           {/* Succes Message */}

@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <>
-      <section>
+      <section className='main-section'>
         <h1 className='section-title'>Iniciar Sesión</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-floating mb-3">
