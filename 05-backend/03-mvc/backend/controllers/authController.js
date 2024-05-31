@@ -9,6 +9,7 @@ const register = async (req, res) => {
   const { email, password, role } = req.body;
   encryptPassword = await bcrypt.hash(password, 10);
   const user = await User.create({ email, encryptPassword, role });
+  console.log("Usuario registrado:", { user });
   res.status(201).send({ message: "Usuario creado correctamente" });
 }
 
@@ -28,7 +29,8 @@ const login = async (req, res) => {
         res.status(401).send({ message: "Password incorrecto" });
       }
     });
-  } else {  
+  } else {
+    console.log("Usuario no encontrado.");
     res.status(404).send({ message: "Usuario no encontrado" }); 
   }
 }

@@ -6,6 +6,7 @@ const addIdAndTimeStamps = (req, res, next) => {
     req.body.createdAt = Date.now();
     req.body.updatedAt = Date.now();
   }
+  
   next();
 };
 

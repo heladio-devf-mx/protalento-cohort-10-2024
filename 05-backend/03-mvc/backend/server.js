@@ -33,7 +33,7 @@ app.get("/", (request, response) => {
 // Rutas
 app.use('/api/v1', autorRoutes);
 app.use("/api/v1", libroRoutes);
-app.use("/api/v1", authRoutes);
+app.use("/api/v1/auth", authRoutes);
 // 4. Lanzar el servidor
 app.listen(3000, () => {
   console.log("Servidor corriendo en el puerto 3000");
