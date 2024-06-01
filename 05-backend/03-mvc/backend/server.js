@@ -5,6 +5,8 @@ const db = require("./config/database");
 const autorRoutes = require("./routes/autorRoutes");
 const libroRoutes = require("./routes/libroRoutes");
 const authRoutes = require("./routes/authRoutes");
+const staticRoutes = require("./routes/staticRoutes");
+const paisRoutes = require("./routes/paisRoutes");
 
 // 2. Crear una instancia de express
 const app = express();
@@ -33,6 +35,8 @@ app.get("/", (request, response) => {
 // Rutas
 app.use('/api/v1', autorRoutes);
 app.use("/api/v1", libroRoutes);
+app.use('/api/v1', staticRoutes);
+app.use('/api/v1', paisRoutes);
 app.use("/api/v1/auth", authRoutes);
 // 4. Lanzar el servidor
 app.listen(3000, () => {
