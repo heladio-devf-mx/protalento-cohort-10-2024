@@ -83,7 +83,7 @@ const Registro = () => {
           <div>{error}</div>
           {/* Succes Message */}
           <div>{successMessage}</div>
-          <button type="submit" className="btn btn-primary">Iniciar Sesión</button>
+          <button type="submit" className="btn btn-primary">Registrarme</button>
         </form>
         
       </section>

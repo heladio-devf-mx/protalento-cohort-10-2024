@@ -16,7 +16,7 @@ const loginUser = async (loginData) => {
     console.log({errorMessage});
     throw new Error("Inicio de sesión incorrecto.");   // avisar que hubo algo mal
   }
-  const { message, token} = await response.json();
+  const { message, token } = await response.json();
   // Guardar el token en localStorage
   // console.log(message);
   localStorage.setItem('token', token);

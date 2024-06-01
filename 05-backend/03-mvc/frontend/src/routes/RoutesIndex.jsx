@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Autores from "../pages/Autores";
 import CrearAutor from "../pages/CrearAutor";
+import CrearLibro from "../pages/CrearLibro";
 import Registro from "../pages/Registro";
 import Login from "../pages/Login";
 
@@ -14,6 +15,7 @@ export default function RoutesIndex() {
       <Route path="/login" element={<Login />} />
       <Route path="/autores" element={<Autores />} />
       <Route path="/autores/crear" element={<CrearAutor />} />
+      <Route path="/libros/crear" element={<CrearLibro />} />
     </Routes>
   );
 }

@@ -2,7 +2,9 @@ const Libro = require("../models/Libros");
 
 // Create new book
 const createLibro = async (req, res) => {
-
+  const libro = new Libro(req.body);
+  await libro.save();
+  res.send({ data: libro });
 }
 
 // Get all
