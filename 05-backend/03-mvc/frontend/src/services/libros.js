@@ -27,7 +27,9 @@ const createLibro = async (libro) => {
     body: JSON.stringify(libro),
   });
 
-  return response;
+  const { data } = await response.json();
+  console.log(data)
+  return data;
 }
 
 export { getAllLibros, createLibro }
