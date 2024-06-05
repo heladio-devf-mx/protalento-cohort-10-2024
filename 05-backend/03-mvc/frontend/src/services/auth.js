@@ -1,6 +1,6 @@
 const BASE_URL = "http://localhost:3000/api/v1";
 
-const loginUser = async (loginData) => {
+const loginUser = async (loginData, setIsLogedIn, setToken) => {
   const response = await fetch(`${BASE_URL}/auth/login`, {
     method: "POST",
     headers: {
@@ -20,13 +20,20 @@ const loginUser = async (loginData) => {
   // Guardar el token en localStorage
   // console.log(message);
   localStorage.setItem('token', token);
-
+  // Actualizar el estado Global
+  setIsLogedIn(true);
+  setToken(token);
   // console.log(data);
   return message;
 }
-// TODO 
-const logoutUser = async () => {
-  
+
+const logoutUser = (setToken, setIsLogedIn) => {
+  // actualizar la bandera isLogedIn a false en el estado global/context
+  setIsLogedIn(false);
+  // eliminar el token del estado global/context
+  setToken(null);
+  // eliminar el token del localStorage
+  localStorage.removeItem('token');
 }
 
 const registerUser = async (newUserData) => {

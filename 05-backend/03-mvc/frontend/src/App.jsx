@@ -1,23 +1,20 @@
-import { createContext } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import RoutesIndex from './routes/RoutesIndex';
 import NavBar from './components/NavBar';
-
-// 1. Crear objeto del context con un valor por defecto
-export const AuthContext = createContext(); // { isLogedIn: false }
+import { AuthContextProvider } from './contexts/AuthContext';
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      {/* 2. Provider: proveer información al contexto */}
-        <AuthContext.Provider value={{isLogedIn: false}}>
+      {/* 2.3 Uso el componente que tiene al Provider del contexto */}
+        <AuthContextProvider>
           {/* Hijos / Children */}
           <NavBar />
           <RoutesIndex />
-        </AuthContext.Provider>
+        </AuthContextProvider>
       </BrowserRouter>
     </>
   );

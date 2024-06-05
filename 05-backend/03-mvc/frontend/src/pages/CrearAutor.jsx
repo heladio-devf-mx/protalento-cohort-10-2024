@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { createAutor } from "../services/autores";
-import { AuthContext } from "../App";
+import { AuthContext } from "../contexts/AuthContext";
 
 const CrearAutor = () => {
   const [nombre, setNombre] = useState("")

@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { loginUser } from "../services/auth";
 import { useNavigate } from 'react-router-dom';
-
+import { AuthContext } from "../contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  // navigation
   const navigate = useNavigate();
+  // context
+  // const authContext = useContext(AuthContext);
+  const { setIsLogedIn, setToken } = useContext(AuthContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // evita que se refresque la página y se envíe el formulario
@@ -20,7 +23,7 @@ const Login = () => {
     
     try {
       setError('');
-      const response = await loginUser(data);
+      const response = await loginUser(data, setIsLogedIn, setToken);
       // Limpiar el formulario y redirigir a alguna otra página
       console.log(response);
       setEmail('');

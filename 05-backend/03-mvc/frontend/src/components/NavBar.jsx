@@ -1,13 +1,23 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import { useContext } from 'react';
-import { AuthContext } from '../App';
+import { AuthContext } from '../contexts/AuthContext';
+import { logoutUser } from '../services/auth';
 
 
 const NavBar = () => {
+  // navigation
+  const navigate = useNavigate();
   // 3. Consumiendo el contexto
-  const MyAuthContext = useContext(AuthContext);
-  console.log(MyAuthContext);
+  const authContext = useContext(AuthContext);
+  // console.log(authContext);
+  function handleLogout() {
+    // cerrar la sesión en el estado global
+    logoutUser(authContext.setToken, authContext.setIsLogedIn);
+    // redirect hacia Home
+    navigate('/');
+  }
+
   return (
     <nav>
       <section>
@@ -18,12 +28,19 @@ const NavBar = () => {
           <li>
             <NavLink to="/autores">Autores</NavLink>
           </li>
-          <li>
-            <NavLink to="/autores/crear">Crear Autor</NavLink>
-          </li>
-          <li>
-            <NavLink to="/libros/crear">Crear Libro</NavLink>
-          </li>
+          {
+              authContext.isLogedIn ?
+                <>
+                  <li>
+                    <NavLink to="/autores/crear">Crear Autor</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/libros/crear">Crear Libro</NavLink>
+                  </li>
+                </>
+              :
+                ''
+          }
         </ul>
       </section>
       <section>
@@ -32,7 +49,12 @@ const NavBar = () => {
             <NavLink to="/registro">Registro de usuario</NavLink>
           </li>
           <li>
-            <NavLink to="/login">{MyAuthContext.isLogedIn ? 'Cerrar Sesión' : 'Iniciar Sesión'}</NavLink>
+            {
+              authContext.isLogedIn ?
+                <a href="#" onClick={handleLogout}>Cerrar Sesión</a>
+                :
+                <NavLink to="/login">Iniciar Sesión</NavLink>
+            }
           </li>
         </ul>
       </section>
