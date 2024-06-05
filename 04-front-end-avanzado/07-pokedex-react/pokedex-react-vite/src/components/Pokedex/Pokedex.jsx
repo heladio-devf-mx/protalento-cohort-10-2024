@@ -6,11 +6,11 @@ import { findPokemonByName, first150Pokemons } from "../../services/pokedexServi
 
 function Pokedex() {
   // Mostrar Resultado
-  const [searchResult, setSearchResult] = useState(null); 
+  const [searchResult, setSearchResult] = useState(null);
   const [pokemones, setPokemones] = useState([]);
 
   async function obtenerPokemones() {
-   let pokemones_result = await first150Pokemons();
+    let pokemones_result = await first150Pokemons();
     setPokemones(pokemones_result);
   }
 
@@ -27,8 +27,8 @@ function Pokedex() {
         <SearchBar actualizarSearchResult={setSearchResult} />
         {/* Uso de props */}
         {/* Render condicional */}
-        { (searchResult && <PokemonCard pokemon={searchResult} />) || 
-          pokemones.map((pokemon,i) => 
+        {(searchResult && <PokemonCard pokemon={searchResult} />) ||
+          pokemones.map((pokemon, i) =>
             <PokemonCard pokemon={pokemon} key={i} />
           )
         }

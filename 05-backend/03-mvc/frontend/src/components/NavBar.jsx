@@ -1,7 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import './NavBar.css';
+import { useContext } from 'react';
+import { AuthContext } from '../App';
+
 
 const NavBar = () => {
+  // 3. Consumiendo el contexto
+  const MyAuthContext = useContext(AuthContext);
+  console.log(MyAuthContext);
   return (
     <nav>
       <section>
@@ -26,7 +32,7 @@ const NavBar = () => {
             <NavLink to="/registro">Registro de usuario</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Iniciar Sesión</NavLink>
+            <NavLink to="/login">{MyAuthContext.isLogedIn ? 'Cerrar Sesión' : 'Iniciar Sesión'}</NavLink>
           </li>
         </ul>
       </section>

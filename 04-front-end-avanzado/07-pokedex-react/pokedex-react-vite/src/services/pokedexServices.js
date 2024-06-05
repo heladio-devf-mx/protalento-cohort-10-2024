@@ -8,7 +8,7 @@ async function findPokemonByName(pokemon_name) {
 }
 
 async function first150Pokemons() {
-  let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150");
+  let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=15");
   let pokemon_list = await response.json();
   let pokemons = [];
 

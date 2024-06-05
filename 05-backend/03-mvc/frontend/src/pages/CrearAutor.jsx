@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { createAutor } from "../services/autores";
+import { AuthContext } from "../App";
 
 const CrearAutor = () => {
   const [nombre, setNombre] = useState("")
   const [apellido, setApellido] = useState("")
   const [vive, setVive] = useState(true)
+
+  // context
+  const MyAuthContext = useContext(AuthContext);
+  console.log(MyAuthContext);
 
   const crearAutor = async (event) => {
     event.preventDefault()
