@@ -48,7 +48,7 @@ const CrearAutor = () => {
         <button type="submit">Agregar</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default CrearAutor
+export default CrearAutor;

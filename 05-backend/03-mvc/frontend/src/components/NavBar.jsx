@@ -59,7 +59,7 @@ const NavBar = () => {
         </ul>
       </section>
     </nav>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;
