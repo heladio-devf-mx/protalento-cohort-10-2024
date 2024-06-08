@@ -2,10 +2,23 @@
 // El modelo de moviesCatalog me permitirá acceder a la BD
 const MoviesCatalog = require("../models/MoviesCatalog");
 
+//const cors = (request, response, next) => {
+//  next()
+//}; 
+
 const getMovies = async (request, response) => {
   // return response.send(`Próximamente la lista de películas`)
+
+  const afterDate = request.query.afterDate;
+  let moviesList
+
   try {
-    const moviesList = await MoviesCatalog.find();
+    if (afterDate) {
+      moviesList = await MoviesCatalog.where("release_date", ">", afterDate);
+    } else {
+      moviesList = await MoviesCatalog.find();
+    }
+  
     response.send({
       success: true,
       data: moviesList
